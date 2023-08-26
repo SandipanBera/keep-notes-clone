@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <title>keep clone📝</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Lobster", cursive;
+      }
+      :root {
+        --primary-color: #FF8551;
+        --secondary-color: rgb(20, 179, 20);
+      }
+      body {
+        height: 100vh;
+        background:#9BCDD2;
+      }
+      header {
+        height: 150px;
+      }
+      nav {
+        background-color: #FF8551;
+        height: 60px;
+        display: flex;
+        align-items: center;
+      }
+      i {
+        font-size: 25px;
+        color: rgb(30, 48, 80);
+      }
+      #lg-1 {
+        margin-left: 20px;
+      }
+      h2 {
+        margin-left: 10px;
+        color: rgb(30, 48, 80);
+      }
+      .add-note {
+        float: right;
+        margin-right: 20px;
+        margin-top: 20px;
+        display: flex;
+        height: 35px;
+        align-items: center;
+        border-radius: 25px;
+        justify-content: space-between;
+        width: 160px;
+        position: relative;
+      }
+      .add-note::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: inherit;
+        width: 35px;
+        left: 0;
+        background-color: var(--primary-color);
+        border-radius: 35px;
+        transition: all ease 0.5s;
+        z-index: -1;
+      }
+      .add-note:hover::after  {
+        width: 100%;
+        background-color: rgb(75, 208, 75);
+      }
+      .add-note:hover span{
+        margin-right: 10px;
+      }
+      span {
+        font-size: 18px;
+        color: rgb(30, 48, 80);
+        font-weight: 600;
+        padding-right: 5px;
+        text-transform: uppercase;
+        cursor:default;
+        transition: all ease 0.5s;
+      }
+      #lg-2 {
+        display: flex;
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+      }
+      .section{
+        display: inline-block;
+      }
+      .note {
+        width: 260px;
+        height: 170px;
+        margin-left: 35px;
+        margin-top: 20px;
+        overflow-y: scroll;
+        /* border:2px solid black; */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        background: #fff;
+      }
+      .operation {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: 5px;
+        margin-top: 5px;
+        height: 20%;
+      }
+      button {
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12);
+    
+
+      }
+      .text1{
+        height: 100%;
+        padding-left: 10px;
+        padding-top: 10px;
+        overflow: hidden; 
+        /* background: #fff; */
+        font-size: medium;     
+        
+      }
+     
+      .text-area {
+        width: 100%;
+        height: 100%;
+        padding-left: 10px;
+        padding-top: 10px;       
+        overflow: hidden;
+        font-size: large;
+        /* background: #fff; */
+        resize: none;
+        outline: none;
+        border: none;
+      }
+
+      .edit {
+        background-color: rgb(4, 184, 4);
+        border: none;
+        
+      }
+      .fa-edit {
+        font-size: 15px;
+        color: white;
+      }
+      .delete {
+        background-color: rgb(187, 11, 11);
+        border: none;
+      }
+      .fa-trash-alt {
+        font-size: 15px;
+        color: white;
+      }
+      .edit:hover {
+        background-color: white;
+      }
+      .edit:hover .fa-edit {
+        color: rgb(4, 184, 4);
+      }
+      .delete:hover {
+        background-color: white;
+      }
+      .delete:hover .fa-trash-alt {
+        color: rgb(185, 14, 10);
+      }
+     .hidden{
+      display :none;
+     }
+     
+     
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <i class="fa-regular fa-note-sticky fa-shake" id="lg-1"></i>
+        </div>
+        <h2>Keep Notes</h2>
+      </nav>
+      <div class="add-note">
+        <div class="note-logo">
+          <i class="fa-solid fa-angle-right" id="lg-2"></i>
+        </div>
+        <span>add note</span>
+      </div>
+    </header>
+    <script src="keep.js"></script>
+  </body>
+</html>
